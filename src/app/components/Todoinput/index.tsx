@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+const Input = styled.input`
+  width: 100%;
+  border: none;
+  outline: 0;
+`;
+
 const Box = styled.div`
   display: flex;
   align-items: center;
@@ -7,12 +13,6 @@ const Box = styled.div`
   width: 100%auto;
   font-size: 1.1em;
   border-bottom: 1px solid #eee;
-`;
-
-const Input = styled.input`
-  width: 100%;
-  border: none;
-  outline: 0;
 `;
 
 export default function TodoInput() {
