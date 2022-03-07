@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -15,10 +16,30 @@ const Box = styled.div`
   border-bottom: 1px solid #eee;
 `;
 
-export default function TodoInput() {
+export default function TodoInput({
+  setTodoList,
+}: {
+  setTodoList: (todo: ITodoItem) => void;
+}) {
+  const [content, setContent] = React.useState<string>('');
   return (
     <Box>
-      <Input placeholder="할일을 입력해 주세요" />
+      <Input
+        placeholder="할일을 입력해 주세요"
+        value={content}
+        onChange={e => setContent(e.target.value)}
+        onKeyPress={e => {
+          if (content === '') return;
+          if (e.key !== 'Enter' && e.key !== 'NumpadEnter') return;
+          setTodoList({
+            id: '0',
+            content: content,
+            completed: false,
+            editing: false,
+          });
+          setContent('');
+        }}
+      />
     </Box>
   );
 }
