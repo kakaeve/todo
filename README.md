@@ -28,7 +28,8 @@ react를 이용한 to-do SPA구축
 - styled-components를 이용하여 style 구현
 
 ### 배포 페이지
-[배포페이지] <my-todo-app-kim.vercel.app/>
+
+[배포페이지] <https://my-todo-app-kim.vercel.app/>
 
 # 개선사항
 - 다른 어플리케이션과 통합 예정
